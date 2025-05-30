@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple app using Array</title>
+</head>  
+<style>
+body{
+font-family: Arial,  sans-serif;
+background: #f5f5f5;
+margin: 0;
+padding: 0;
+display: flex;
+height: 100vh;
+justify-content: center;
+align-items: center;
+}
+
+.quiz-container {
+background: #fff;
+border-radius: 8px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+padding: 32px 24px;
+max-width: 350ox;
+width: 100%;
+}
+
+h2 {
+margin-top: 0;
+text-align: center;
+}
+
+#questiontext {   
+font-size: 1.15em;
+margin-bottom: 18px;
+text-align: center;
+}
+
+#answers {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+#answers button {
+padding:8px 0 ;
+border: none;
+border-radius: 5px;
+background-color: blue;
+color: white;
+font-size: 1em;
+cursor: pointer;
+transition: background 0.2s;
+}
+
+#answers button:hover {
+background-color: blue;
+}
+ 
+#scoretext {
+text-align: center;
+font-weight: bold;
+margin-top: 20px;
+font-size: 1.1em;
+}
+
+.reset-btn{
+display: block;
+margin: 18px auto 0;
+padding: 8px 20px;
+border: none;
+background-color: red;
+color: white;
+border-radius: 5px;
+font-size: 1em;
+cursor: pointer;
+transition: background 0.2em;
+}
+
+.reset-btn:hover{
+background-color: red;
+}
+</style>
+
+
+<body>
+<div class="quiz-container">
+<h2>Quiz App</h2>
+<p id="questiontext"></p>
+<div id="answers"></div>
+<p id="scoretext"></p>
+<button id="reset-btn" class="reset-btn" style="display: none;">Restart quiz</button>
+</div>
+
+</body>
+</html>
+
+<script> 
+// define the questions, option and answers
+var questions
+
+</script>
