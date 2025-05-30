@@ -98,6 +98,65 @@ background-color: red;
 
 <script> 
 // define the questions, option and answers
-var questions
+var questions = [
+    {
+    "question": "What is the capital of France?",
+    "options": ["Paris", "London", "Berlin", "Rome"],
+    "answer": "Paris"
+    },
+    {
+    "question": "What is 2 + 2?",
+    "options": ["3", "4", "5", "6"],
+    "answer": "4"
+    },
+    {
+    "question": "What is the largest planet in the solar system?",
+    "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+    "answer": "Jupiter"
+    },
+    {
+    "question": "What is the boiling point of water?",
+    "options": ["98 degree celcius", "100 degree celcius", "80 degree celcius", "120 degree celcius"],
+    "answer": "Paris"
+    },
+    {
+    "question": "Who wrote 'To kill a Mockingbird'?",
+    "options": ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
+    "answer": "Paris"
+    }
+];
+
+var currentQuestionIndex = 0;
+var score = 0;
+
+function displayQuestion() {
+    var question = questions[currentQuestionIndex];
+    document.getElementById("questionText").innerText = question.question;
+
+    var answersDiv = document.getElementById("answers");
+    answersDiv.innerHTML = "";
+    question.options.forEach(option => {
+        var button = document.createElement("button");
+        button.innerText = option;
+        button.onclick = function() {
+            checkAnswer(option);
+        };
+        answersDiv.appendChild(button);
+    });
+
+    document.getElementById("scoreText").innerText = "";
+}
+
+function checkAnswer(selectedOption) {
+    var correct = questions[currentQuestionIndex].answer === selectedOption;
+    if (correct) score++;
+
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion();
+    } else {
+        showScore();
+    }
+}
 
 </script>
